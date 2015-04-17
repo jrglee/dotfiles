@@ -1,0 +1,23 @@
+[user]
+	name = Jorge Lee
+	email = jrg.lee@gmail.com
+
+[merge]
+	tool = opendiff
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  pr = pull --rebase
+  co = checkout
+  st = status
+[branch]
+	autosetuprebase = always
+[core]
+	precomposeunicode = true
+	editor = /usr/bin/vim
+	autocrlf = input
+[credential]
+	helper = osxkeychain
