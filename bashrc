@@ -1,20 +1,16 @@
-__git_ps1 () {
-	local b="$(git symbolic-ref HEAD 2>/dev/null)";
-	if [ -n "$b" ]; then
-		printf " (%s)" "${b##refs/heads/}";
-	fi
-}
-
 source ~/.profile
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\[$(tput setaf 6)\]\u\[$(tput setaf 1)\]@\[$(tput setaf 5)\]\h\[$(tput setaf 3)\]]\[$(tput setaf 2)\]:\[$(tput setaf 4)\]\W\[$(tput setaf 2)\]\$(__git_ps1)\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	source $(brew --prefix)/etc/bash_completion
+  source $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Single_line
+  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
 if [ -f $(brew --prefix)/bin/boot2docker ]; then
-  eval $(boot2docker shellinit)
+  eval $(boot2docker shellinit 2>/dev/null)
 fi
 
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
@@ -31,7 +27,5 @@ export SBT_OPTS="-XX:MaxPermSize=2g -XX:+CMSClassUnloadingEnabled"
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 
-alias "set-java7"="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)"
-alias "set-java8"="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)"
 alias ls="ls -G"
 alias ll="ls -lh"
