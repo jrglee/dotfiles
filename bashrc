@@ -5,8 +5,16 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Single_line
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+  source "$(brew --prefix bash-git-prompt)/share/prompt-colors.sh"
+  GIT_PROMPT_THEME=Custom
+  GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}\$(date +%H:%M) ${BoldYellow}\w${ResetColor}"
+  GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
+  GIT_PROMPT_END_USER=" ${BoldWhite}\$${ResetColor} "
+  GIT_PROMPT_END_ROOT="${GIT_PROMPT_END_USER}"
+  GIT_PROMPT_BRANCH="${BrightMagenta}"
+  GIT_PROMPT_CHANGED="${BrightBlue}✚ "
+  GIT_PROMPT_STASHED="${BoldCyan}⚑ "
 fi
 
 if [ -f $(brew --prefix)/bin/boot2docker ]; then
@@ -23,7 +31,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_OPTS="-Xmx2g"
-export SBT_OPTS="-XX:MaxPermSize=2g -XX:+CMSClassUnloadingEnabled"
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled"
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 
