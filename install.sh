@@ -10,12 +10,8 @@ for file in 'bash_profile' 'bashrc' 'gitconfig' 'gvimrc.after' 'vimrc.after'
 do
   dest="${HOME}/.${file}"
 
-  if [[ -L "$dest" ]]; then
-    $debug rm $dest
-  fi
+  [[ -L "$dest" ]] && $debug rm $dest
+  [[ -f "$dest" ]] && $debug mv $dest "${dest}.old"
 
-  if [[ -f "$dest" ]]; then
-    $debug mv $dest "${dest}.old"
-  fi
- $debug ln -s $SCRIPTPATH/$file $dest
+  $debug ln -s $SCRIPTPATH/$file $dest
 done
