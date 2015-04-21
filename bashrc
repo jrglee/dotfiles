@@ -8,6 +8,7 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
   source "$(brew --prefix bash-git-prompt)/share/prompt-colors.sh"
   GIT_PROMPT_THEME=Custom
+  GIT_PROMPT_FETCH_REMOTE_STATUS=0
   GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}\$(date +%H:%M) ${BoldYellow}\w${ResetColor}"
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
   GIT_PROMPT_END_USER=" ${BoldWhite}\$${ResetColor} "
