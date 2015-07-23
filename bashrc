@@ -31,7 +31,8 @@ export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA_OPTS="-Xmx2g"
+export JAVA_OPTS="-Xmx2g -Djava.security.egd=file:/dev/./urandom"
+export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled"
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
