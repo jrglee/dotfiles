@@ -15,6 +15,17 @@ Homebrew packages
 * docker-compose
 * boot2docker
 
+Setup bash
+----------
+
+Change OSX default shell to use the one installed by Homebrew
+
+    chsh -s /usr/local/bin/bash
+
+Install dotfiles
+
+    ~/dotfiles/install.sh
+
 Vim plugins
 -----------
 
