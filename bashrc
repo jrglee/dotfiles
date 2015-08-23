@@ -39,3 +39,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/b
 
 alias ls="ls -G"
 alias ll="ls -lh"
+
+if [ -f ~/.bashrc.after ]; then
+  source ~/.bashrc.after
+fi
