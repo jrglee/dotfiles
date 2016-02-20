@@ -18,10 +18,6 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_STASHED="${BoldCyan}⚑ "
 fi
 
-if [ -f $(brew --prefix)/bin/boot2docker ]; then
-  eval $(boot2docker shellinit 2>/dev/null)
-fi
-
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
 export HISTCONTROL=ignoredups
@@ -39,6 +35,10 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/b
 
 alias ls="ls -G"
 alias ll="ls -lh"
+
+function load-docker-machine {
+  eval $(docker-machine env)
+}
 
 if [ -f ~/.bashrc.after ]; then
   source ~/.bashrc.after
