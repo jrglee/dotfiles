@@ -20,8 +20,12 @@ fi
 
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
-export HISTCONTROL=ignoredups
 export CLICOLOR=1
+
+export HISTCONTROL=ignoredups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+shopt -s histappend
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk

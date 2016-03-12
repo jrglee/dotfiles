@@ -30,3 +30,4 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
+au BufRead,BufNewFile *yaml.template set filetype=yaml
