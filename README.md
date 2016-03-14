@@ -13,7 +13,6 @@ Homebrew packages
 * macvim
 * docker
 * docker-compose
-* boot2docker
 * docker-machine
 * hg (for other dev tools)
 
