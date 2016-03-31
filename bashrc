@@ -44,6 +44,11 @@ function load-docker-machine {
   eval $(docker-machine env)
 }
 
+function clean-docker-dangling() {
+  docker rmi $(docker images -qf dangling=true)
+  docker volume rm $(docker volume ls -qf dangling=true)
+}
+
 if [ -f ~/.bashrc.after ]; then
   source ~/.bashrc.after
 fi
