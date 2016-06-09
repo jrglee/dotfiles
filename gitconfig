@@ -1,7 +1,6 @@
 [user]
 	name = Jorge Lee
 	email = jrg.lee@gmail.com
-
 [merge]
 	tool = opendiff
 [color]
@@ -10,9 +9,10 @@
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-  co = checkout
-  st = status
-  preb = pull --rebase
+	co = checkout
+	st = status
+	preb = pull --rebase
+	cam = commit -am
 [branch]
 	autosetuprebase = always
 [core]
