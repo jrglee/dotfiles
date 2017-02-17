@@ -6,7 +6,7 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
 
-for file in 'bash_profile' 'bashrc' 'gitconfig' 'gvimrc.after' 'npmrc' 'vimrc.after'
+for file in 'bash_profile' 'bashrc' 'gitconfig' 'gvimrc.after' 'npmrc' 'vimrc.after' 'vimrc.before'
 do
   dest="${HOME}/.${file}"
 

@@ -1,9 +1,18 @@
 color desert
 set mouse=a
 
+set nobackup
+set noswapfile
+
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
