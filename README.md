@@ -11,9 +11,7 @@ Homebrew packages
 * bash-git-prompt
 * vim
 * macvim
-* docker
-* docker-compose
-* docker-machine
+* neovim (tap neovim/neovim)
 * hg (for other dev tools)
 
 Setup bash
