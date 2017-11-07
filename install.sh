@@ -16,7 +16,7 @@ do
   $debug ln -s $SCRIPTPATH/$file $dest
 done
 
-$debug mkdir -p ~/.config
-$debug ln -s ~/.vim ~/.config/nvim
-$debug ln -s ~/.vimrc ~/.config/nvim/init.vim
+$debug mkdir -p ~/.config/nvim
+[ -e $HOME/.vim ] && $debug ln -s ~/.vim ~/.config/nvim
+[ -e $HOME/.vimrc ] && $debug ln -s ~/.vimrc ~/.config/nvim/init.vim
 
