@@ -9,6 +9,7 @@
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  diffwords = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	co = checkout
 	st = status
 	preb = pull --rebase
