@@ -27,10 +27,7 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
 
-export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_OPTS="-Xmx2g -Djava.security.egd=file:/dev/./urandom"
 export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled"
@@ -40,15 +37,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$HOME/.rvm/b
 alias ls="ls -G"
 alias ll="ls -lh"
 
-function load-docker-machine {
-  eval $(docker-machine env)
-}
-
-function clean-docker-dangling {
-  docker rmi $(docker images -qf dangling=true)
-  docker volume rm $(docker volume ls -qf dangling=true)
-}
-
 if [ -f ~/.bashrc.after ]; then
   source ~/.bashrc.after
 fi
+. "$HOME/.cargo/env"

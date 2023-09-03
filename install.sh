@@ -6,12 +6,12 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
 
-for file in 'bash_profile' 'bashrc' 'gitconfig' 'gvimrc.after' 'npmrc' 'vimrc.after' 'vimrc.before'
+for file in 'bash_profile' 'bashrc' 'gitconfig' 'gvimrc.after' 'npmrc' 'vimrc.after' 'vimrc.before' 'zshrc.after'
 do
   dest="${HOME}/.${file}"
 
-  [[ -L "$dest" ]] && $debug rm $dest
-  [[ -f "$dest" ]] && $debug mv $dest "${dest}.old"
+  [ -L "$dest" ] && $debug rm $dest
+  [ -f "$dest" ] && $debug mv $dest "${dest}.old"
 
   $debug ln -s $SCRIPTPATH/$file $dest
 done
