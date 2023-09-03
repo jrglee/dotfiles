@@ -1,8 +1,6 @@
-Packages to install
-===================
+# Packages to install
 
-Homebrew packages
------------------
+## Homebrew packages
 
 * git
 * git-extras
@@ -14,19 +12,13 @@ Homebrew packages
 * neovim (tap neovim/neovim)
 * hg (for other dev tools)
 
-Setup bash
-----------
+# Install
 
-Change OSX default shell to use the one installed by Homebrew
-
-    chsh -s /usr/local/bin/bash
-
-Install dotfiles
+Install dotfiles:
 
     ~/dotfiles/install.sh
 
-Vim plugins
------------
+# Vim plugins
 
 * `git@github.com:bling/vim-airline.git`
 * `git@github.com:tfnico/vim-gradle.git`
