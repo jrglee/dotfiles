@@ -1,3 +1,8 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -d $(brew --prefix git-extras) ] && source $(brew --prefix git-extras)/share/git-extras/git-extras-completion.zsh
 [ -z "$JAVA_HOME" -a -d $(/usr/libexec/java_home) ] && export JAVA_HOME=$(/usr/libexec/java_home)
+
+[[ -n $SSH_CONNECTION ]] && PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
+
+export PATH=$HOME/.local/bin:$PATH
+

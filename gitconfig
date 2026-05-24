@@ -7,6 +7,7 @@
 	ui = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   diffwords = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
@@ -22,3 +23,9 @@
 	autocrlf = input
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+

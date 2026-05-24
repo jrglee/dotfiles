@@ -41,3 +41,4 @@ if [ -f ~/.bashrc.after ]; then
   source ~/.bashrc.after
 fi
 . "$HOME/.cargo/env"
+. "$HOME/.local/bin/env"
